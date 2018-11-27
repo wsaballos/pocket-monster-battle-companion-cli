@@ -28,17 +28,17 @@ rl.question('Which Poketto Monsutā do you want information on? ', (answer) => {
 
 
 
-const PocketMonster = function (number, pocketMonsterName, type) {
-    this.index = number;
+const PocketMonster = function (indexOfPocketMonster, pocketMonsterName, type) {
+    this.indexOfPocketMonster = indexOfPocketMonster;
     this.name = pocketMonsterName;
     this.types = type;
     this.info = function () {
         console.log(`
 Pocketmonster Name: ${this.name}
-Pocketmonster Index: ${this.index}
+Pocketmonster Index: ${this.indexOfPocketMonster}
 Pocketmonster Type(s): ${this.types}
 Ailment Details:`)
-        if (this.index === 6)
+        if (this.indexOfPocketMonster === 6)
             console.log('=====~ RIP RULIS ~======')
         const returnedailments = ailment.ailments(this.types)
         console.table(returnedailments);
