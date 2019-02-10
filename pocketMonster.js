@@ -42,6 +42,6 @@ Ailment Details:`)
             console.log('=====~ RIP RULIS ~======')
         const returnedailments = ailment.ailments(this.types)
         console.table(returnedailments);
-        console.table('* Elements not included in table will be base dmg, which is 100%');
+        console.table('* Will not display information on ailments if both Damage To and Damage From are base damage - i.e., 100%');
     }
 }

@@ -1,0 +1,23 @@
+{
+  "name": "pocket-monsters-objects",
+  "version": "1.0.0",
+  "description": "CLI tool to return Pokemon information based on name.",
+  "main": "pocketMonster.js",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsaballos/pocket-monster-battle-companion-cli.git"
+  },
+  "author": "wsaballos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wsaballos/pocket-monster-battle-companion-cli/issues"
+  },
+  "homepage": "https://github.com/wsaballos/pocket-monster-battle-companion-cli#readme"
+}
