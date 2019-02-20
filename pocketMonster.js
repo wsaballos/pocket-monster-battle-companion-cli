@@ -1,5 +1,7 @@
 const axios = require('axios');
 const readline = require('readline');
+const terminalImage = require('terminal-image');
+const got = require('got');
 const ailment = require('./ailments.js');
 
 const rl = readline.createInterface({
@@ -16,7 +18,8 @@ rl.question('Which Poketto Monsutā do you want information on? ', (answer) => {
                 types.push(i.type.name)
             })
             const index = response.data.id
-            const responseMonster = new PocketMonster(index, answer, types);
+            const butt = response.data.sprites.back_default
+            const responseMonster = new PocketMonster(index, answer, types, butt);
             responseMonster.info();
         })
         .catch(function (error) {
@@ -28,10 +31,16 @@ rl.question('Which Poketto Monsutā do you want information on? ', (answer) => {
 
 
 
-const PocketMonster = function (indexOfPocketMonster, pocketMonsterName, type) {
+const PocketMonster = function (indexOfPocketMonster, pocketMonsterName, type, butt) {
     this.indexOfPocketMonster = indexOfPocketMonster;
     this.name = pocketMonsterName;
     this.types = type;
+    (async () => {
+        const { body } = await got(butt, { encoding: null });
+        this.butt = await terminalImage.buffer(body)
+        console.log(this.butt)
+    })();
+
     this.info = function () {
         console.log(`
 Pocketmonster Name: ${this.name}
