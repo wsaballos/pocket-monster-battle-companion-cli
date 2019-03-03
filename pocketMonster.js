@@ -1,10 +1,8 @@
 const axios = require('axios');
-const terminalImage = require('terminal-image');
-const got = require('got');
-const ailment = require('./ailments.js');
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+const port = process.env.PORT || 3000
 
 app.get('/form.js', function (req, res) {
     res.sendFile(__dirname + '/form.js');
@@ -44,8 +42,6 @@ io.on('connection', function (socket) {
             this.name = pocketMonsterName;
             this.types = type;
             (async () => {
-                const { body } = await got(front, { encoding: null });
-                this.front = await terminalImage.buffer(body)
                 io.emit('selection', back, front, id);
             })();
 
@@ -62,6 +58,6 @@ io.on('connection', function (socket) {
     });
 });
 
-http.listen(3000, function () {
+http.listen(port, function () {
     console.log('listen');
 });
