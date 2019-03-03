@@ -17,13 +17,26 @@ $(function () {
         user ?
             (
                 imageToUse = front,
-                alignment = 'left',
+                $(window).resize(function () {
+                    if ($(window).width <= 800) {
+                        alignment = 'none'
+                    } else {
+                        alignment = 'left'
+                    }
+                }),
+
                 $('#messages').append($('<li>').append($('<img>').attr({ src: imageToUse, style: `float: ${alignment}` })))
             )
             :
             (
                 imageToUse = back,
-                alignment = 'right',
+                $(window).resize(function () {
+                    if ($(window).width <= 800) {
+                        alignment = 'none'
+                    } else {
+                        alignment = 'right'
+                    }
+                }),
                 $('#messages').prepend($('<li>').append($('<img>').attr({ src: imageToUse, style: `float: ${alignment}` })))
             )
 
