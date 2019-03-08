@@ -13,7 +13,10 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-    console.log('a user connected:', socket.id);
+
+    socket.on('load', function () {
+        io.emit('load', socket.id);
+    })
     socket.on('selection', function (msg, user) {
         console.log(user === socket.id)
         msg = msg.replace(/\s+/g, '-');
@@ -41,10 +44,7 @@ io.on('connection', function (socket) {
             this.indexOfPocketMonster = indexOfPocketMonster;
             this.name = pocketMonsterName;
             this.types = type;
-            (async () => {
-                io.emit('selection', back, front, id);
-            })();
-
+            io.emit('selection', back, front, id);
             this.info = function () {
                 return this.types;
             }

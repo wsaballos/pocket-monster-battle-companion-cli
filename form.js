@@ -1,6 +1,11 @@
 $(function () {
-
     var socket = io();
+
+    socket.emit('load');
+    socket.on('load', function (user) {
+        alert('A new trainer has connected')
+    })
+
     $('form').submit(function (e) {
         e.preventDefault(); // prevents page reloading
         socket.emit('selection', $('#m').val());
