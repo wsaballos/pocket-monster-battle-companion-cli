@@ -2,8 +2,17 @@ $(function () {
     var socket = io();
 
     socket.emit('load');
-    socket.on('load', function (user) {
-        alert('A new trainer has connected')
+    socket.on('load', function (numberOfConnections, id) {
+        let user = socket.id === id;
+        if (numberOfConnections === 1) {
+            alert('Waiting for a trainer to connect')
+        } else {
+            if (!user) {
+                alert('A trainer has connected')
+            } else {
+                alert('A trainer is in the chat, and ready to battle.')
+            }
+        }
     })
 
     $('form').submit(function (e) {

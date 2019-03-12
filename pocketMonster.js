@@ -12,11 +12,20 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+let connections = 0;
 io.on('connection', function (socket) {
-
+    const id = socket.id;
+    connections++;
     socket.on('load', function () {
-        io.emit('load', socket.id);
+        console.log(connections)
+        io.emit('load', connections, id);
     })
+
+    socket.on('disconnect', function () {
+        connections--;
+        // io.emit('load', socket.id);
+    });
+
     socket.on('selection', function (msg, user) {
         console.log(user === socket.id)
         msg = msg.replace(/\s+/g, '-');
@@ -31,7 +40,6 @@ io.on('connection', function (socket) {
                 const index = response.data.id
                 const front = response.data.sprites.front_default
                 const back = response.data.sprites.back_default
-                const id = socket.id
                 const responseMonster = new PocketMonster(index, msg, types, front, back, id);
 
                 console.log(imgToUse, socket.id)
@@ -51,10 +59,6 @@ io.on('connection', function (socket) {
 
         }
 
-    });
-
-    socket.on('disconnect', function () {
-        console.log('user disconnected');
     });
 });
 
