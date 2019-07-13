@@ -4,11 +4,15 @@
   "description": "CLI tool to return Pokemon information based on name.",
   "main": "form.js",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "axios": "^0.18.1",
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  },
   "scripts": {
     "start": "node ./pocketMonster.js",
     "test": "echo \"Error: no test specified\" && exit 1"
