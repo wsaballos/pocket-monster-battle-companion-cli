@@ -15,7 +15,7 @@ app.get('/form.js', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile('../index.html');
 });
 
 let connections = 0;
