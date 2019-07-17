@@ -6,7 +6,7 @@ var io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 
 // express setup for static files
-app.use(express.static(__dirname));
+app.use('/', express.static('dest/styles/'));
 
 
 
@@ -15,7 +15,7 @@ app.get('/form.js', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 let connections = 0;
