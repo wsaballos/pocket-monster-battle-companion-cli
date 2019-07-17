@@ -5,12 +5,12 @@ $(function () {
     socket.on('load', function (numberOfConnections, id) {
         let user = socket.id === id;
         if (numberOfConnections === 1) {
-            alert('Waiting for a trainer to connect')
+            console.log('Waiting for a trainer to connect')
         } else {
             if (!user) {
-                alert('A trainer has connected')
+                console.log('A trainer has connected')
             } else {
-                alert('A trainer is in the chat, and ready to battle.')
+                console.log('A trainer is in the chat, and ready to battle.')
             }
         }
     })
