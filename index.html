@@ -4,83 +4,44 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="gameboy_frame.css"/>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-        
-            body {
-                font: 13px Helvetica, Arial;
-            }
-        
-            form {
-                background: #000;
-                padding: 3px;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-        
-            form input {
-                border: 0;
-                padding: 10px;
-                width: 90%;
-                margin-right: .5%;
-            }
-        
-            form button {
-                width: 9%;
-                background: rgb(130, 224, 255);
-                border: none;
-                padding: 10px;
-            }
-        
-            #messages {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-        
-            #messages li {
-                padding: 5px 10px;
-                height: 600px;
-            }
-        
-            #messages li:nth-child(odd) {
-                background: #eee;
-            }
-
-            #messages > li > img {
-                height: 600px
-            }
-
-            @media only screen and (max-width: 700px) {
-                #messages li {
-                    padding: 5px 10px;
-                    height: 300px;
-                }
-                #messages > li > img {
-                    float: none !important;
-                    height: 300px;
-                }
-            }
-        </style>
 </head>
 <body>
-    <div class="main">
-    <ul id="messages"></ul>
-    
-    <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="container">
+        <div class="jumbotron col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <img src="http://pluspng.com/img-png/pokemon-logo-png-file-international-pokemon-logo-svg-1000.png" 
+            class="pklogo img-thumbnail rounded" alt="Pika">
+            <span id="pokeTitle">Gotta' catch all them pokemans.</span>
+                <div class="pokeSearch nav justify-content-center position-static">    
+                    <nav class="navbar navbar-light bg-light">
+                        <a class="navbar-brand">Choose a Pokemon</a>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Pikachu" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav> 
+                </div>   
+        </div>
+    </div>    
+    <div class="container">
+        <div class="row">
+            <div class="gameboyOutline col-10 col-sm-8 col-md-7 col-lg-6 col-xl-4 fixed-bottom"></div>        
+        </div>      
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="badges col fixed-top">
+                <img src="https://cdn.bulbagarden.net/upload/archive/d/dd/20160212104017%21Boulder_Badge.png">
+                <img src="https://cdn.bulbagarden.net/upload/archive/9/9c/20160212103957%21Cascade_Badge.png">
+                <img src="https://cdn.bulbagarden.net/upload/archive/a/a6/20160212103845%21Thunder_Badge.png">
+                <img src="https://cdn.bulbagarden.net/upload/archive/1/12/20160212101506%21Volcano_Badge.png">
+            </div>
+        </div>
+    </div>   
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="./form.js"></script>
-    </div>
 </body>
 </html>
