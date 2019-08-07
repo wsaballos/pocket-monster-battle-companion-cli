@@ -15,7 +15,8 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "start": "node ./src/scripts/pocketMonster.js",
+    "serve": "nodemon ./src/scripts/pocketMonster.js",
+    "start": "browser-sync start --proxy=localhost:8080 --files='**/*.css, **/*.html, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify --logLevel=debug && npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
