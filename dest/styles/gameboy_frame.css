@@ -1,15 +1,5 @@
 body {
-    background-image: url('http://digitalimagemakerworld.com/images/pokemon-pictures/36421351-pokemon-pictures.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: 100px;
-}
-.gameboyOutline {
-    background-color: green;
-    margin: auto;
-    height: 600px;
-    border: 3px solid green;
-    padding: 10px;
+    background-color: gray;
 }
 .pklogo {
     background: none;
@@ -31,4 +21,23 @@ body {
 }
 img {
     height: 50px;
+}
+.gbFrame {
+    position: fixed;
+    margin-top: -107px;
+    margin-left: 200px;
+    height: 700px;
+    width: 600px;
+}
+.my-custom-scrollbar {
+    background-color: lightgray;
+    margin-left: 312px;
+    bottom: 358px;
+    position: fixed;
+    height: 240px;
+    overflow: auto;
+    width: 380px;
+}
+.table-wrapper-scroll-y {
+    display: block;
 }
