@@ -1,3 +1,43 @@
-.main {
-    background-color: blueviolet;
+body {
+    background-color: gray;
+}
+.pklogo {
+    background: none;
+    border: none;
+    height: 100px;
+    width: 250px;
+}
+.jumbotron {
+    background: none;
+    border: none;
+    padding-top: 30px;
+}    
+.pokeSearch {
+    padding-bottom: 100px;
+}
+.badges {
+    padding-top: 20px;
+    margin-left: 20px;
+}
+img {
+    height: 50px;
+}
+.gbFrame {
+    position: fixed;
+    margin-top: -107px;
+    margin-left: 200px;
+    height: 700px;
+    width: 600px;
+}
+.my-custom-scrollbar {
+    background-color: lightgray;
+    margin-left: 312px;
+    bottom: 358px;
+    position: fixed;
+    height: 240px;
+    overflow: auto;
+    width: 380px;
+}
+.table-wrapper-scroll-y {
+    display: block;
 }
