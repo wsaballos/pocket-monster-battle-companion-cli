@@ -23,8 +23,11 @@ io.on('connection', function (socket) {
     const id = socket.id;
     connections++;
     socket.on('load', function () {
-        console.log(connections)
-        io.emit('load', connections, id);
+        console.log(connections.date)
+        axios.get('https://pokeapi.co/api/v2/pokemon/')
+            .then(function (response) {
+                io.emit('load', connections, id, response.data.results);
+            })
     })
 
     socket.on('disconnect', function () {

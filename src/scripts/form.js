@@ -2,8 +2,9 @@ $(function () {
     var socket = io();
 
     socket.emit('load');
-    socket.on('load', function (numberOfConnections, id) {
+    socket.on('load', function (numberOfConnections, id, listOfPokemon) {
         let user = socket.id === id;
+
         if (numberOfConnections === 1) {
             console.log('Waiting for a trainer to connect')
         } else {
