@@ -1,4 +1,5 @@
 const axios = require('axios');
+const browserSync = require('browser-sync');
 var express = require("express");
 var app = require('express')();
 var http = require('http').Server(app);
@@ -24,10 +25,14 @@ io.on('connection', function (socket) {
     connections++;
     socket.on('load', function () {
         console.log(connections.date)
-        axios.get('https://pokeapi.co/api/v2/pokemon/')
-            .then(function (response) {
-                io.emit('load', connections, id, response.data.results);
-            })
+        axios.get('https://pokeapi.co/api/v2/pokemon/', {
+            params: {
+                limit: '151'
+            }
+        })
+        .then(function (response) {
+            io.emit('load', connections, id, response.data.results);
+        })
     })
 
     socket.on('disconnect', function () {
@@ -73,4 +78,15 @@ io.on('connection', function (socket) {
 
 http.listen(port, function () {
     console.log('listening');
+    browserSync({
+        files: ['**/*.{html,js,css}'],
+        ignore: 'node_modules',
+        logLevel: 'debug',
+        reloadDelay:  10,
+        online: false,
+        open: false,
+        port: port + 1,
+        proxy: 'localhost:' + port,
+        ui: false
+    });
 });

@@ -5,6 +5,7 @@
   "main": "/src/scripts/form.js",
   "dependencies": {
     "axios": "^0.18.1",
+    "browser-sync": "^2.26.7",
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
@@ -15,8 +16,7 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "serve": "nodemon ./src/scripts/pocketMonster.js",
-    "start": "browser-sync start --proxy=localhost:8080 --files='**/*.css, **/*.html, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify --logLevel=debug && npm run serve",
+    "start": "nodemon ./src/scripts/pocketMonster.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
