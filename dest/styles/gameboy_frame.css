@@ -1,5 +1,8 @@
 body {
-    background-color: gray;
+    background-color: rgb(2, 221, 2);
+}
+.poke-title {
+    text-align: right;
 }
 .pklogo {
     background: none;
@@ -7,27 +10,14 @@ body {
     height: 100px;
     width: 250px;
 }
-.jumbotron {
-    background: none;
-    border: none;
-    padding-top: 30px;
-}    
-.pokeSearch {
-    padding-bottom: 100px;
+.gb-frame {
+    position: relative;
+    left: 0px;
+    top: 0px;
 }
-.badges {
-    padding-top: 20px;
-    margin-left: 20px;
-}
-img {
-    height: 50px;
-}
-.gbFrame {
-    position: fixed;
-    margin-top: -107px;
-    margin-left: 200px;
-    height: 700px;
-    width: 600px;
+.gb-image {
+    height: 852px;
+    width: 599px;
 }
 .my-custom-scrollbar {
     background-color: lightgray;
@@ -40,4 +30,37 @@ img {
 }
 .table-wrapper-scroll-y {
     display: block;
+}
+#list-of-pokemon {
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    height: 255px;
+    width: 377px;
+    padding-left: 0px;
+    list-style-position: inside;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    color: rgb(135, 0, 245);
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    top: 101px;
+    left: 127px;
+    margin-bottom: 0px;
+}
+#list-of-pokemon::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+li {
+    font-family: 'Press Start 2P', cursive;
+    text-align: left;
+    border-style: solid;
+    border-width: 1px;
+}
+li:hover {
+    background-color: rgb(206, 206, 206);
 }
