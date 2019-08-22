@@ -7,44 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <img src="http://pluspng.com/img-png/pokemon-logo-png-file-international-pokemon-logo-svg-1000.png" 
             class="pklogo img-thumbnail rounded" alt="Pika">
-            <span id="pokeTitle">Gotta' catch all them pokemans.</span>
-                <div class="pokeSearch nav justify-content-center position-static">    
-                    <nav class="navbar navbar-light bg-light">
-                        <a class="navbar-brand">Choose a Pokemon</a>
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Pikachu" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </nav> 
-                </div>   
+            <div class="poke-title">Gotta' catch all them pokemans.</div>  
         </div>
     </div>    
     <div class="container">
         <div class="row">
-            <div class="col">
-                <img src="gameboy-color.png" class="gbFrame " alt="gameboy-color">
-                <div class="table-wrapper-scroll-y my-custom-scrollbar col-xl-4">
-
-                    <table class="table table-bordered table-striped mb-0">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            </tr>
-                        </thead>
-                        <tbody id="list-of-pokemon">
-                        </tbody>
-                    </table>
-                  
-                  </div> 
-            </div>       
-        </div>      
+            <div class="gb-frame col-md-8 offset-md-2">
+                <img src="gameboy-color.png" class="gb-image" alt="gameboy-color">
+                
+                <ol id="list-of-pokemon">
+                    <h3>Name</h3>
+                </ol>
+            </div>
+        </div> 
     </div>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.js"></script>

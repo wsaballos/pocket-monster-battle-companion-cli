@@ -28,10 +28,7 @@ $(function () {
             pokemonName = pokemonName.slice(0, pokemonName.length - 2) + ' female';
         }
 
-        pokemonRow.innerHTML += `<tr>
-                                    <th scope="row">${pokemonIndex + 1}</th>
-                                    <td>${pokemonName}</td>
-                                </tr>`;
+        pokemonRow.innerHTML += `<li><a href="${listOfPokemon[pokemonIndex].url}" target="_blank">${pokemonName}</a></li>`;
         listOfPokemon[pokemonIndex];    
     }
 })
