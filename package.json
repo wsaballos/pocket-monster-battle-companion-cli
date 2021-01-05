@@ -4,12 +4,12 @@
   "description": "CLI tool to return Pokemon information based on name.",
   "main": "form.js",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
